@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="catApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Whatevs</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/app.js"></script>
+</head>
+<body>
+    <div ng-controller="catCtrl">
+        <form id="catform">
+            <label for="username">Cat User Name:</label>
+            <input type="text" name="username" id="username" ng-model="cat.username"/>
+            <input type="submit" value="Submit" ng-click="addCat(cat)"/>
+        </form>
+
+        <div id="container"  ng-if="cat">
+            <ul>
+                <li ng-repeat="cat in cats">
+                    {{ cat.username }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
